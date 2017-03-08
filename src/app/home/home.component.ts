@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DialogService} from "ng2-bootstrap-modal";
+import {AlertComponent} from "./alert.component";
 
 @Component({
   selector: 'my-home',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  constructor(private dialogService: DialogService) {
     // Do stuff
   }
 
@@ -15,4 +17,7 @@ export class HomeComponent implements OnInit {
     console.log('Hello Home');
   }
 
+  showAlert() {
+    this.dialogService.addDialog(AlertComponent);
+  }
 }

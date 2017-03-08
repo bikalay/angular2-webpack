@@ -10,21 +10,28 @@ import { ApiService } from './shared';
 import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
+import {BootstrapModalModule} from "ng2-bootstrap-modal";
+import {AlertComponent} from "./home/alert.component";
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    BootstrapModalModule,
     routing
   ],
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    AlertComponent
   ],
   providers: [
     ApiService
+  ],
+  entryComponents: [
+    AlertComponent
   ],
   bootstrap: [AppComponent]
 })
